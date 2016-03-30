@@ -1,8 +1,8 @@
 Package.describe({
   name: 'creaux:reaction-links',
   version: '0.0.1',
-  summary: '',
-  git: '',
+  summary: 'Reaction links package for adding custom links into Reaction Commerce.',
+  git: 'git@github.com:creaux/reaction-links.git',
   documentation: 'README.md'
 });
 
@@ -15,6 +15,7 @@ Package.onUse(function(api) {
   api.use("mongo");
   api.use("blaze-html-templates");
   api.use("reactive-dict");
+  api.use("random");
 
   api.use("reactioncommerce:core@0.12.0");
   api.use("reactioncommerce:reaction-router@1.0.0");
@@ -25,21 +26,7 @@ Package.onUse(function(api) {
   api.addFiles('common/collections.js', ['server', 'client']);
   api.addFiles('common/service.js', ['client', 'server']);
   api.addFiles('server/links.js', 'server');
-  api.addFiles('client/autorun.js', 'client');
-  api.addFiles('client/components/links/links.html', 'client');
-  api.addFiles('client/components/links/links.js', 'client');
-  api.addFiles('client/components/linkDetail/linkDetail.html', 'client');
-  api.addFiles('client/components/linkDetail/linkDetail.js', 'client');
-  api.addFiles('client/components/linkEdit/linkEdit.html', 'client');
-  api.addFiles('client/components/linkEdit/linkEdit.js', 'client');
-  api.addFiles('client/components/linksCollection/linksCollection.html', 'client');
-  api.addFiles('client/components/linksCollection/linksCollection.js', 'client');
+  api.addFiles('client/templates.html', 'client');
+  api.addFiles('client/templates.js', 'client');
 
 });
-
-// Package.onTest(function(api) {
-//   api.use('ecmascript');
-//   api.use('tinytest');
-//   api.use('reaction-alternate-links');
-//   api.addFiles('reaction-alternate-links-tests.js');
-// });

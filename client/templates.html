@@ -1,0 +1,83 @@
+<template name="linkDetail">
+    <div class="container-main">
+        {{#with link}}
+            <p>Link management | <a href="javascript:void(0);" data-delete data-id="{{_id}}">Delete</a> | <a href="javascript:void(0);" data-create>Create</a></p> <!-- TODO -->
+            <div class="row">
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                Id
+                            </div>
+                            <div class="col-xs-9">
+                                {{_id}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <label>Title</label>
+                        {{>fieldComponent field="title" value=title}}
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <label>Url</label>
+                        {{>fieldComponent field="url" value=url}}
+                    </div>
+                </div>
+            </div>
+        {{/with}}
+    </div>
+</template>
+
+<template name="linkEdit">
+    {{#if condition type "eq" "textarea"}}
+        <p class="product-detail-edit {{field}}-edit">
+            <textarea class="{{field}}-edit-input" data-field="{{field}}" placeholder="{{i18nPlaceholder}}">{{value}}</textarea>
+        </p>
+    {{else}}
+        <div class="product-detail-edit {{field}}-edit">
+            <input type="text" value="{{value}}" class="{{field}}-edit-input form-control" data-field="{{field}}" placeholder="{{i18nPlaceholder}}"/>
+        </div>
+    {{/if}}
+    <span class="product-detail-message" id="{{field}}-message"></span>
+</template>
+
+<template name="linkField">
+    {{#if condition type "eq" "textarea"}}
+        <p class="product-detail-field {{field}}">
+            {{{value}}}
+        </p>
+    {{else}}
+        <div class="product-detail-field {{field}}">
+            {{value}}
+        </div>
+    {{/if}}
+</template>
+
+<template name="links">
+    <ul class="nav nav-pills nav-stacked">
+        {{#each links}}
+            <li><a href="javascript:void(0);" data-url="{{url}}">{{title}}</a></li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="linksCollection">
+    <div class="panel-group">
+        {{#each links}}
+            <div class="panel panel-default">
+                <div class="panel-heading panel-heading-flex">
+                    <div class="panel-title">
+                        {{title}}
+                    </div>
+                    <div class="panel-controls">
+                        <a href="javascript:void(0);" data-link data-id="{{_id}}">Edit</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</template>

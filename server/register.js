@@ -6,7 +6,7 @@ ReactionCore.registerPackage({
   settings: {},
   registry: [
     {
-      route: "/links/:_id",
+      route: "/link/:_id",
       name: "link",
       template: "linkDetail",
       workflow: "corePageWorkflow"
@@ -14,7 +14,6 @@ ReactionCore.registerPackage({
     {
       label: 'Links',
       name: 'linksCollection',
-      route: '/links',
       template: 'linksCollection',
       provides: "settings" // Add link into the card other possible options: https://reactioncommerce.com/docs/development/packages#reactioncoreregisterpackage
     },
@@ -26,6 +25,16 @@ ReactionCore.registerPackage({
       icon: "fa fa-file-text-o",
       priority: 2,
       container: "core"
+    },
+    {
+      route: "/links/createLink",
+      name: "createLink",
+      label: "Add Link",
+      icon: "fa fa-file-text-o",
+      template: "linkDetail",
+      provides: "shortcut",
+      container: "addItem",
+      priority: 3
     }
   ]
 });
