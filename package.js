@@ -18,7 +18,6 @@ Package.onUse(function(api) {
   api.use("random");
 
   api.use("reactioncommerce:core@0.12.0");
-  api.use("reactioncommerce:reaction-router@1.0.0");
 
   api.addFiles('server/register.js', 'server');
   api.addFiles('common/global.js', ['server', 'client']);
