@@ -1,6 +1,6 @@
 Package.describe({
   name: 'creaux:reaction-links',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Reaction links package for adding custom links into Reaction Commerce.',
   git: 'git@github.com:creaux/reaction-links.git',
   documentation: 'README.md'
@@ -17,7 +17,7 @@ Package.onUse(function(api) {
   api.use("reactive-dict");
   api.use("random");
 
-  api.use("reactioncommerce:core@0.12.0");
+  api.use("reactioncommerce:core");
 
   api.addFiles('server/register.js', 'server');
   api.addFiles('common/global.js', ['server', 'client']);
