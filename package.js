@@ -17,7 +17,7 @@ Package.onUse(function(api) {
   api.use("reactive-dict");
   api.use("random");
 
-  api.use("reactioncommerce:core");
+  api.use("reactioncommerce:core@0.11.0");
 
   api.addFiles('server/register.js', 'server');
   api.addFiles('common/global.js', ['server', 'client']);
